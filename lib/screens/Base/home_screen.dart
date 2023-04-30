@@ -39,27 +39,42 @@ class _HomeScreenState extends State<HomeScreen> {
         unselectedItemColor: Colors.black38,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.handshake),
+            icon: ImageIcon(
+              AssetImage("images/match_making_navbar.png"),
+
+              size: 24,
+            ),
             label: 'Match-Making',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.email),
+            icon: ImageIcon(
+              AssetImage("images/request_management_navbar.png"),
+
+              size: 24,
+            ),
             label: 'Request Management',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.chat),
+            icon: ImageIcon(
+              AssetImage("images/message_navbar.png"),
+
+              size: 24,
+            ),
             label: 'Message',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle),
+            icon: ImageIcon(
+              AssetImage("images/my_page_navbar.png"),
+
+              size: 24,
+            ),
             label: 'My Page',
           ),
         ],
         currentIndex: _selectedIndex, //New
         onTap: _onItemTapped,
       ),
-
-    );
+      );
   }
 
   void _onItemTapped(int index) {
