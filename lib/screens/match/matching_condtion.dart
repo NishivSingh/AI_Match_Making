@@ -1,3 +1,4 @@
+import 'package:ai_match_making_app/screens/Base/my_page.dart';
 import 'package:flutter/material.dart';
 import 'package:ai_match_making_app/utils/constants.dart';
 import 'package:ai_match_making_app/screens/profile/util_classes.dart';
@@ -160,7 +161,12 @@ class MatchingConditionBuilder extends State<MatchingConditionScreen> {
             width: 220,
             height: 65,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const MyPage()));
+              },
               style: ElevatedButton.styleFrom(
                 foregroundColor: Colors.white,
                 backgroundColor: Colors.grey[600],
