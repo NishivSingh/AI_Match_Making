@@ -1,6 +1,6 @@
 import 'package:ai_match_making_app/screens/profile/edit_profile_screen.dart';
 import 'package:flutter/material.dart';
-
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 // import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class MyProfilePage extends StatefulWidget {
@@ -227,9 +227,21 @@ class _MyProfilePageState extends State<MyProfilePage> {
               height: 200,
               width: 100,
               color: Colors.grey,
-              child: const Text("Map"),
+              child: GoogleMap(
+                initialCameraPosition: const CameraPosition(
+                  target: LatLng(34.6937, 135.5023), // San Francisco, CA
+                  zoom: 12,
+                ),
+                markers: {
+                  const Marker(
+                    markerId: MarkerId('marker_id'),
+                    position: LatLng(34.6937, 135.5023), // San Francisco, CA
+                  ),
+                },
+              ),
             ),
           ),
+
           Padding(
             padding: const EdgeInsets.only(left: 32, right: 32),
             child: Column(
@@ -364,7 +376,8 @@ class _MyProfilePageState extends State<MyProfilePage> {
           ),
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterFloat,
+      floatingActionButtonLocation:
+          FloatingActionButtonLocation.miniCenterFloat,
     );
   }
 
